@@ -1,0 +1,393 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eaafc8;
+  background: -webkit-linear-gradient(to right, #eaafc8, #654ea3);
+  background: linear-gradient(to right, #eaafc8, #654ea3);
+  min-height: 100vh;
+  /* background: radial-gradient(
+    134.34% 134.34% at 50% 0%,
+    #1f3757 0%,
+    #131537 100%
+  ); */
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+}
+
+h3 {
+  color: #fff;
+}
+/*========================================================================================================
+========================================== GAME PAGE ========================================================
+========================================================================================================*/
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.scoreboard {
+  width: 700px;
+  height: 150px;
+  border-radius: 15px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.title {
+  padding-left: 30px;
+}
+
+.score {
+  width: 150px;
+  height: 114px;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score h1 {
+  color: #565468;
+  font-size: 56px;
+  font-family: "Barlow", sans-serif;
+}
+
+.score p {
+  color: #2a45c2;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 2.5px;
+  text-align: left;
+}
+
+.hands {
+  background-image: url("../asserts/images/triangle.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  visibility: visible;
+  opacity: 1;
+  position: relative;
+  width: 476px;
+  height: 430px;
+  margin-top: 100px;
+  display: flex;
+  z-index: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hands img {
+  width: 200px;
+  height: 200px;
+  display: block;
+}
+
+.hands .paper {
+  margin-right: 20px;
+}
+
+.hands .scissors {
+  margin-left: 20px;
+}
+
+.hands .hand {
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.hands .hand:hover {
+  transform: translate3d(0px, -8px, 0px);
+}
+
+.contest {
+  /* display: none; */
+  margin-top: 50px;
+  width: 900px;
+}
+
+.contest img {
+  width: 275px;
+  height: 275px;
+}
+
+.contest  div {
+  flex: 1;
+}
+
+.contest h1 {
+  color: white;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.contest .newGame {
+  color: hsl(229, 25%, 31%);
+  background-color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.newGame:hover {
+  background: rgb(218, 218, 218);
+  transform: translate3d(0px, -2px, 0px);
+}
+
+.contest .handImageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.referee {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.referee h1 {
+  font-size: 45px;
+  color: white;
+}
+
+.computerhand {
+  display: flex;
+  flex-direction: column;
+}
+
+/*========================================================================================================
+========================================== HEADER ========================================================
+========================================================================================================*/
+
+.megamenu {
+  position: static;
+}
+
+.megamenu .dropdown-menu {
+  background: none;
+  border: none;
+  width: 100%;
+}
+
+code {
+  color: #745eb1;
+  background: #fff;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+}
+
+.text-uppercase {
+  letter-spacing: 0.08em;
+}
+
+/*========================================================================================================
+========================================== FOOTER ========================================================
+========================================================================================================*/
+footer {
+  margin-top: 20px;
+  background-color: #000; 
+  color: #fff;
+  max-width: 100%;
+  height: auto;
+  padding: 90px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+/*========================================================================================================
+========================================== HOME ========================================================
+========================================================================================================*/
+
+.container {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 40%;
+  left: 50%;
+  height: 60%;
+}
+
+form {
+  background: rgba(255,255,255,0.3);
+  padding: 3em;
+  height: 320px;
+  border-radius: 20px;
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+} 
+form p {
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.7;
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  }
+
+button {
+  background: transparent;
+  border: none;
+}
+
+.create {
+  background: transparent;
+    width: 200px;
+    padding: 1em;
+    margin-bottom: 2em;
+    border: none;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-radius: 5000px;
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+form a:hover {
+      text-shadow: 2px 2px 6px #00000040;
+    }
+    
+form a:active {
+      text-shadow: none;
+    }
+  
+form input {
+    background: transparent;
+    width: 200px;
+    padding: 1em;
+    margin-bottom: 2em;
+    border: none;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-radius: 5000px;
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+form input:hover {
+      background: rgba(255,255,255,0.1);
+      box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+    }
+    
+form input[type="email"],
+form input[type="password"],
+form input:focus {
+        background: rgba(255,255,255,0.1);
+        box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+}
+    
+form input[type="button"] {
+      margin-top: 10px;
+      width: 150px;
+      font-size: 1rem;
+}
+      form input:hover {
+        cursor: pointer;
+      }
+      
+      form input:active {
+        background: rgba(255,255,255,0.2);
+      }
+  
+  form input:hover {
+    margin: 4px;
+  }
+
+::placeholder {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.drop {
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid rgba(255,255,255,0.3);
+  border-top: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+  position: absolute;
+  transition: all 0.2s ease;
+  
+  /* &-1 {
+    height: 80px;
+    width: 80px;
+    top: -20px;
+    left: -40px;
+    z-index: -1;
+  }
+  
+  &-2 {
+    height: 80px;
+    width: 80px;
+    bottom: -30px;
+    right: -10px;
+  }
+  
+  &-3 {
+    height: 100px;
+    width: 100px;
+    bottom: 120px;
+    right: -50px;
+    z-index: -1;
+  }
+  
+  &-4 {
+    height: 120px;
+    width: 120px;
+    top: -60px;
+    right: -60px;
+  }
+  
+  &-5 {
+    height: 60px;
+    width: 60px;
+    bottom: 170px;
+    left: 90px;
+    z-index: -1;
+  } */
+}
+
+a,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
