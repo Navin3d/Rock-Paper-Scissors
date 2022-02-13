@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -52,7 +53,7 @@ public class MatchEntity implements Serializable {
 	@Column(name = "player2_score")
 	private Integer player2Score = 0;
 	
-	@ManyToOne(targetEntity = Player.class)
+	@OneToMany(mappedBy = "match", targetEntity = Player.class)
 	private Set<Player> players;
 	
 	@Column(name = "is_player1_won")
@@ -67,8 +68,8 @@ public class MatchEntity implements Serializable {
 	@Column(name = "match_cancelled")
 	private Boolean isMatchCancelled = false;
 	
-	@OneToOne(targetEntity = RoomEntity.class)
-	private RoomEntity room = new RoomEntity();;
+	@OneToOne(mappedBy = "matches", fetch = FetchType.LAZY)
+	private RoomEntity room = new RoomEntity();
 	
 	@Column(name = "started_at")
 	private Timestamp startedAt;

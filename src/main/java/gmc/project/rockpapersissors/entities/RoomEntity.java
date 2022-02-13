@@ -5,9 +5,11 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -33,7 +35,8 @@ public class RoomEntity implements Serializable {
 	@Column(name = "room_filled")
 	private Boolean roomFilled = false;
 	
-	@OneToOne(mappedBy = "room", targetEntity = MatchEntity.class)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "match_id", referencedColumnName = "id")
 	private MatchEntity matches = new MatchEntity();
 
 }

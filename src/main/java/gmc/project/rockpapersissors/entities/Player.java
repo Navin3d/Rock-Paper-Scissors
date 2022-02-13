@@ -29,7 +29,7 @@ public class Player implements Serializable {
 	@Column(name = "player_id")
 	private String playerId;
 	
-	@OneToMany(targetEntity = MatchEntity.class)
+	@ManyToOne(targetEntity = MatchEntity.class)
 	private MatchEntity match;
 	
 	public Player() {
