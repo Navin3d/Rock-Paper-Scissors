@@ -1,10 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import score from "../slices/score-slice";
-import { scoreActions } from "../slices/score-slice";
+import RoomSlice from "../slices/room-slice";
+import PlayerSlice from "../slices/player-slice";
 
 const store = configureStore({
-    reducer: score
+    reducer: {
+        room: RoomSlice,
+        player: PlayerSlice,
+    }
 });
 
 const subscriber = () => {

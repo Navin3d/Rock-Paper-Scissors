@@ -4,7 +4,7 @@ import Title from "../../asserts/images/title.png";
 
 const ScoreBoard = () => {
 
-    const score = useSelector(state => state.score);
+    const score = useSelector(state => state.player.playerScore);
     
     return (
         <div class="scoreboard"> 

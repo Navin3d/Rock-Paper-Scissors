@@ -1,31 +1,41 @@
 import { useSelector, useDispatch } from "react-redux";
+import axios from "axios";
 
-import { scoreActions } from "../../redux/slices/score-slice";
+import { playerActions } from "../../redux/slices/player-slice";
 
 import Paper from "../../asserts/images/Paper.png";
 import Rock from "../../asserts/images/Rock.png";
 import Scissors from "../../asserts/images/Scissors.png";
+import { baseUrl } from "../../config";
 
 const Options = () => {
 
     const dispatch = useDispatch();
 
-    const handleClick = (value) => {
+    const player = useSelector(state => state.player);
+
+    const handleClick = async (value) => {
         console.log("Clicked: " + value);
-        dispatch(scoreActions.changeSelectedOption(value));
+        dispatch(playerActions.changePlayerSelection(value));
+
+        const url = `${baseUrl}/api/player`;
+        
+        const res = await axios.post(url, player);
+
+        playerActions.inializePlayer(res.data);
     }
 
     return (
         <div>
             <div class="hands">
                 <div class="hand paper">
-                    <button name="Paper" onClick={() => handleClick("Paper")} value="Paper"><img src={Paper} /></button>
+                    <button name="Paper" onClick={() => handleClick("PAPER")} value="PAPER"><img src={Paper} /></button>
                 </div>
                 <div class="hand scissors">
-                    <button onClick={() => handleClick("Scissors")} value="Scissors"><img src={Scissors} /></button>
+                    <button onClick={() => handleClick("SCISSOR")} value="SCISSOR"><img src={Scissors} /></button>
                 </div>
                 <div class="hand rock">
-                    <button onClick={() => handleClick("Rock")} value="Rock"><img src={Rock} /></button>                      
+                    <button onClick={() => handleClick("ROCK")} value="ROCK"><img src={Rock} /></button>                      
                 </div>
             </div>
         </div>
