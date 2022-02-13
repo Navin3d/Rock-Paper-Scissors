@@ -1,10 +1,10 @@
-package gmc.project.rockpapersissors;
+package gmc.project.practice.rockpaperscissors;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RockPaperSissorsApplicationTests {
+class RockPapersScissorApplicationTests {
 
 	@Test
 	void contextLoads() {

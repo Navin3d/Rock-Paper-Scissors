@@ -1,8 +1,8 @@
-package gmc.project.rockpapersissors.exceptions;
+package gmc.project.practice.rockpaperscissors.exceptions;
 
 public class RoomNotFoundException extends RuntimeException {
 
-	private static final long serialVersionUID = -8246245624873827586L;
+	private static final long serialVersionUID = 1685160022238725646L;
 
 	public RoomNotFoundException() {
 		// TODO Auto-generated constructor stub
