@@ -16,13 +16,5 @@ public class PlayerModel implements Serializable {
 	private Integer playerScore;
 		
 	private Boolean played;
-
-	public PlayerModel(String playerId, Options playerSelection, Integer playerScore, Boolean played) {
-		super();
-		this.playerId = playerId;
-		this.playerSelection = playerSelection;
-		this.playerScore = playerScore;
-		this.played = played;
-	}
 	
 }

@@ -50,10 +50,10 @@ public class PlayerServiceTest {
 		assertEquals(createdPlayer.size(), 1);
 	}
 	
-	@Test
-	void testEditPlayer() {
-		PlayerModel playerEdit = new PlayerModel("1", Options.ROCK, 1, true);
-		PlayerModel player = playerService.editPlayer(playerEdit);
-		assertEquals(playerEdit, player);
-	}
+//	@Test
+//	void testEditPlayer() {
+//		PlayerModel playerEdit = new PlayerModel("1", Options.ROCK, 1, true);
+//		PlayerModel player = playerService.editPlayer(playerEdit);
+//		assertEquals(playerEdit, player);
+//	}
 }
