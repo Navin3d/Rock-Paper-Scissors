@@ -23,6 +23,28 @@ const Options = () => {
         const res = await axios.post(url, player);
 
         playerActions.inializePlayer(res.data);
+
+        init();
+    }
+
+    const [roomId, setRoomId] = useState("");
+    const [playerId, setPlayerId] = useState("");
+
+    const init = async () => {
+        setRoomId(localStorage.getItem("roomId"));
+        setPlayerId(localStorage.getItem("playerId"));
+
+        console.log("Room Id: " + roomId);
+
+        roomId ? navigate("/game") : navigate("/");
+
+        const url1 = `${baseUrl}/api/room/${roomId}/show`;
+        const response1 = await axios.get(url1);
+        let waiting = await roomActions.initialize(response1.data);
+
+        const url2 = `${baseUrl}/api/player/${playerId}/show`;
+        const response2 = await axios.get(url2);
+        waiting = await playerActions.inializePlayer(response2.data);
     }
 
     return (
