@@ -29,7 +29,7 @@ public class MatchRoomServiceImpl implements MatchRoomService {
 	public RoomEntity findOne(String roomId) {
 		Optional<RoomEntity> foundRoom = roomDao.findByRoomId(roomId);
 		
-		if(foundRoom.isEmpty()) throw new RoomNotFoundException(roomId);
+		if(foundRoom == null) throw new RoomNotFoundException(roomId);
 		
 		return foundRoom.get();
 	}

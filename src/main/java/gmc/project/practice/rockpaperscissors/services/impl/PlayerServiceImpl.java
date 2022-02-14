@@ -33,7 +33,7 @@ public class PlayerServiceImpl implements PlayersService {
 	public PlayerEntity findOne(String playerId) {
 		Optional<PlayerEntity> foundPlayer = playerDao.findByPlayerId(playerId);
 		
-		if(foundPlayer.isEmpty()) throw new PlayerNotFoundException(playerId);
+		if(foundPlayer == null) throw new PlayerNotFoundException(playerId);
 		
 		return foundPlayer.get();
 	}
@@ -42,7 +42,7 @@ public class PlayerServiceImpl implements PlayersService {
 	public RoomEntity findOneRoom(String roomId) {
 		Optional<RoomEntity> foundRoom = roomDao.findByRoomId(roomId);
 		
-		if(foundRoom.isEmpty()) throw new RoomNotFoundException(roomId);
+		if(foundRoom == null) throw new RoomNotFoundException(roomId);
 		
 		return foundRoom.get();
 	}
