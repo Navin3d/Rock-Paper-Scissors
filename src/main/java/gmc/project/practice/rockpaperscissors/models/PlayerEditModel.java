@@ -15,4 +15,11 @@ public class PlayerEditModel implements Serializable {
 		
 	private Boolean played;
 
+	public PlayerEditModel(String playerId, Integer playerScore, Boolean played) {
+		super();
+		this.playerId = playerId;
+		this.playerScore = playerScore;
+		this.played = played;
+	}
+
 }
